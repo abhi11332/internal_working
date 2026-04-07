@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: knowledge-base-backend
+  data:
+    mongodb:
+      uri: ${MONGODB_URI:mongodb://localhost:27017/internal_knowledge_base}
+  jackson:
+    serialization:
+      write-dates-as-timestamps: false
+
+server:
+  port: ${PORT:8080}
+
+app:
+  jwt:
+    secret: ${JWT_SECRET:dev-secret-key-dev-secret-key-dev-secret-key-1234567890}
+    expiration-ms: ${JWT_EXPIRATION_MS:86400000}
+  cors:
+    allowed-origin: ${FRONTEND_URL:http://localhost:5173}
+  admin:
+    name: ${ADMIN_NAME:Admin User}
+    email: ${ADMIN_EMAIL:admin@internal.local}
+    password: ${ADMIN_PASSWORD:admin123}
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    operations-sorter: method
+    tags-sorter: alpha
+  api-docs:
+    path: /v3/api-docs
