@@ -33,11 +33,13 @@ public class AuthService {
             throw new ConflictException("Email is already registered");
         }
 
+        Role assignedRole = userRepository.count() == 0 ? Role.ADMIN : Role.USER;
+
         User user = userRepository.save(User.builder()
                 .name(request.name().trim())
                 .email(email)
                 .password(passwordEncoder.encode(request.password()))
-                .role(Role.USER)
+                .role(assignedRole)
                 .createdAt(Instant.now())
                 .build());
 
@@ -75,4 +77,3 @@ public class AuthService {
         return new UserResponse(id, name, email, role);
     }
 }
-

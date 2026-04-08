@@ -3,7 +3,7 @@ spring:
     name: knowledge-base-backend
   data:
     mongodb:
-      uri: ${MONGODB_URI:mongodb://localhost:27017/internal_knowledge_base}
+      uri: mongodb+srv://bloomuser:Abhi1347%23@cluster50591.zcubpg2.mongodb.net/internaldb
   jackson:
     serialization:
       write-dates-as-timestamps: false
@@ -17,10 +17,6 @@ app:
     expiration-ms: ${JWT_EXPIRATION_MS:86400000}
   cors:
     allowed-origin: ${FRONTEND_URL:http://localhost:5173}
-  admin:
-    name: ${ADMIN_NAME:Admin User}
-    email: ${ADMIN_EMAIL:admin@internal.local}
-    password: ${ADMIN_PASSWORD:admin123}
 
 springdoc:
   swagger-ui:
