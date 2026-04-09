@@ -16,7 +16,7 @@ app:
     secret: ${JWT_SECRET:dev-secret-key-dev-secret-key-dev-secret-key-1234567890}
     expiration-ms: ${JWT_EXPIRATION_MS:86400000}
   cors:
-    allowed-origin: ${FRONTEND_URL:https://internal-working.onrender.com}
+    allowed-origins: ${FRONTEND_URLS:https://internal-working.onrender.com,http://localhost:5173}
 
 springdoc:
   swagger-ui:

@@ -3,7 +3,7 @@ spring:
     name: knowledge-base-backend
   data:
     mongodb:
-      uri: mongodb+srv://bloomuser:Abhi1347%23@cluster50591.zcubpg2.mongodb.net/internaldb
+      uri: ${MONGODB_URI}
   jackson:
     serialization:
       write-dates-as-timestamps: false
@@ -16,7 +16,7 @@ app:
     secret: ${JWT_SECRET:dev-secret-key-dev-secret-key-dev-secret-key-1234567890}
     expiration-ms: ${JWT_EXPIRATION_MS:86400000}
   cors:
-    allowed-origin: ${FRONTEND_URL:http://localhost:5173}
+    allowed-origins: ${FRONTEND_URLS:https://internal-working.onrender.com,http://localhost:5173}
 
 springdoc:
   swagger-ui:
