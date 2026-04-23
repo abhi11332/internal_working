@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/articles")
+@RequestMapping({"/api/articles", "/api/v1/articles"})
 @RequiredArgsConstructor
 public class ArticleController {
 
@@ -38,4 +38,3 @@ public class ArticleController {
         return articleService.getArticleById(articleId, currentUser);
     }
 }
-

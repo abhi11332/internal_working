@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/bookmarks")
+@RequestMapping({"/api/bookmarks", "/api/v1/bookmarks"})
 @RequiredArgsConstructor
 public class BookmarkController {
 

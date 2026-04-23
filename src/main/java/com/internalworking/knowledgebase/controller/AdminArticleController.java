@@ -27,7 +27,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/admin/articles")
+@RequestMapping({"/api/admin/articles", "/api/v1/admin/articles"})
 @RequiredArgsConstructor
 public class AdminArticleController {
 
@@ -73,4 +73,3 @@ public class AdminArticleController {
         articleService.deleteArticle(articleId);
     }
 }
-
